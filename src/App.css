@@ -1,0 +1,71 @@
+.App {
+    text-align: center;
+}
+
+.App-header {
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+}
+
+.box {
+    box-sizing: content-box;
+    border: 2px solid #6aff2f;
+    background: #0b3044;
+    border-radius: 5px;
+    position: center;
+    margin: 100px;
+    padding: 2px;
+    width: 112px;
+}
+
+.inputIncMax {
+    color: red;
+    text-align: center;
+    font-size: 25px;
+    width: 85px;
+    background: #6aff2f;
+    border-radius: 5px;
+    padding: 10px;
+    font-weight: bold;
+    border: 2px solid #6aff2f;
+    margin: 1px;
+}
+
+.inputInc {
+    text-align: center;
+    font-size: 25px;
+    background: #6aff2f;
+    width: 85px;
+    border-radius: 5px;
+    padding: 10px;
+    font-weight: bold;
+    border: 2px solid #6aff2f;
+    margin: 1px;
+}
+
+.twoButtons {
+    border: 1px solid #6aff2f;
+    border-radius: 5px;
+    padding: 1px;
+}
+
+.incButton {
+    border: 1px solid #6aff2f;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.resetButton {
+    border: 1px solid #6aff2f;
+    border-radius: 5px;
+    font-weight: bold;
+    margin: 4px;
+}
+
+
