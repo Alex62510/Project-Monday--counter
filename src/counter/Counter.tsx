@@ -1,35 +1,29 @@
 import React, {useState} from 'react';
+import Button from "./Button/Button";
+import Input from "./Input";
 
-type CounterType = {
-    numbers: number[]
-    incNumber: () => void
-    resetNumber: () => void
-}
+const Counter = () => {
+    const [numbers, setNumbers] = useState<number>(0)
+    const incNumber = () => {
+        setNumbers(numbers + 1)
+    }
+    const resetNumber = () => {
+        setNumbers(0)
+    }
 
-const Counter = (props: CounterType) => {
-    const numbersLength = props.numbers.length
+    const numbersLimitMax = numbers === 5
+    const numbersLimitMin = numbers === 0
+
     return (
-        <div className={"box"}>
-            <input
-                value={numbersLength-1}
-                className={(numbersLength === 6) ? "inputIncMax" : "inputInc"}
-            ></input>
-            <div className={"twoButtons"}>
-                <button
-                    className={"incButton"}
-                    onClick={props.incNumber}
-                    disabled={numbersLength === 6}
-                >inc
-                </button>
-                <button
-                    className={"resetButton"}
-                    onClick={props.resetNumber}
-                    disabled={numbersLength === 1}
-                >reset
-                </button>
+        <div className="box">
+            <Input inputvalue={numbers} inputclassName={(numbersLimitMax) ? "inputIncMax" : "inputInc"}  />
+            <div className="twoButtons">
+                <Button numbersLimit={numbersLimitMax} className={"incButton"} title={"inc"} onClickFunc={incNumber}/>
+                <Button numbersLimit={numbersLimitMin} className={"resetButton"} title={"reset"} onClickFunc={resetNumber}/>
             </div>
         </div>
     );
 };
+
 
 export default Counter;
