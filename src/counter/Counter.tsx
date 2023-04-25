@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
-import Button from "./Button/Button";
-import Input from "./Input";
+import Button from "./Button/ButtonCount";
+import Input from "./InputCount";
 
 const Counter = () => {
     // const [numbers, setNumbers] = useState<number>(0)

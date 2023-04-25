@@ -1,84 +1,84 @@
-.App {
-    text-align: center;
-}
+/*.App {*/
+/*    text-align: center;*/
+/*}*/
 
-.App-header {
-    background-color: #282c34;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
-}
+/*.App-header {*/
+/*    background-color: #282c34;*/
+/*    min-height: 100vh;*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    align-items: center;*/
+/*    justify-content: center;*/
+/*    font-size: calc(10px + 2vmin);*/
+/*    color: white;*/
+/*}*/
 
-.box {
-    box-sizing: content-box;
-    border: 2px solid #6aff2f;
-    background: #0b3044;
-    border-radius: 5px;
-    position: center;
-    margin: 100px;
-    padding: 2px;
-    width: 400px;
-    height: 300px;
-}
+/*.box {*/
+/*    */
+/*    border: 2px solid #6aff2f;*/
+/*    background: #0b3044;*/
+/*    border-radius: 5px;*/
+/*    position: center;*/
+/*    margin: 100px;*/
+/*    padding: 2px;*/
+/*    width: 400px;*/
+/*    height: 300px;*/
+/*}*/
 
-.inputIncMax {
-    color: red;
-    text-align: center;
-    font-size: 29px;
-    width: 360px;
-    background: #6aff2f;
-    border-radius: 5px;
-    padding: 10px;
-    font-weight: bold;
-    border: 2px solid #6aff2f;
-    margin: 1px;
-    height: 180px;
-}
+/*.inputIncMax {*/
+/*    color: red;*/
+/*    text-align: center;*/
+/*    font-size: 29px;*/
+/*    width: 360px;*/
+/*    background: #6aff2f;*/
+/*    border-radius: 5px;*/
+/*    padding: 10px;*/
+/*    font-weight: bold;*/
+/*    border: 2px solid #6aff2f;*/
+/*    margin: 1px;*/
+/*    height: 180px;*/
+/*}*/
 
-.inputInc {
-    text-align: center;
-    font-size: 29px;
-    background: #6aff2f;
-    width: 360px;
-    border-radius: 5px;
-    padding: 10px;
-    font-weight: bold;
-    border: 2px solid #6aff2f;
-    margin: 1px;
-    height: 180px;
+/*.inputInc {*/
+/*    text-align: center;*/
+/*    font-size: 29px;*/
+/*    background: #6aff2f;*/
+/*    width: 360px;*/
+/*    border-radius: 5px;*/
+/*    padding: 10px;*/
+/*    font-weight: bold;*/
+/*    border: 2px solid #6aff2f;*/
+/*    margin: 1px;*/
+/*    height: 180px;*/
 
-}
+/*}*/
 
-.twoButtons {
-    border: 1px solid #6aff2f;
-    border-radius: 5px;
-    padding: 1px;
-    height: 90px;
-    width: 395px;
-}
+/*.twoButtons {*/
+/*    border: 1px solid #6aff2f;*/
+/*    border-radius: 5px;*/
+/*    padding: 1px;*/
+/*    height: 90px;*/
+/*    width: 395px;*/
+/*}*/
 
-.incButton {
-    border: 1px solid #6aff2f;
-    border-radius: 5px;
-    font-weight: bold;
-    width: 190px;
-    height: 80px;
-    font-size: x-large;
-    margin: 3px;
-}
+/*.incButton {*/
+/*    border: 1px solid #6aff2f;*/
+/*    border-radius: 5px;*/
+/*    font-weight: bold;*/
+/*    width: 190px;*/
+/*    height: 80px;*/
+/*    font-size: x-large;*/
+/*    margin: 3px;*/
+/*}*/
 
-.resetButton {
-    border: 1px solid #6aff2f;
-    border-radius: 5px;
-    font-weight: bold;
-    margin: 4px;
-    width: 190px;
-    height: 80px;
-    font-size: x-large;
-}
+/*.resetButton {*/
+/*    border: 1px solid #6aff2f;*/
+/*    border-radius: 5px;*/
+/*    font-weight: bold;*/
+/*    margin: 4px;*/
+/*    width: 190px;*/
+/*    height: 80px;*/
+/*    font-size: x-large;*/
+/*}*/
 
 

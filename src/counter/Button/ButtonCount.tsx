@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import {Button} from "@mui/material";
 
 type Buttontype = {
     className: string
@@ -6,19 +7,22 @@ type Buttontype = {
     numbersLimit: boolean
     title: string
 }
-const Button = (props: Buttontype) => {
+const ButtonCount = (props: Buttontype) => {
     const ClickChinge = () => {
         props.onClickFunc()
     }
     return (
-        <button
+        <Button
+            size="medium"
+            color="secondary"
+            variant="contained"
             className={props.className}
             onClick={ClickChinge}
             disabled={props.numbersLimit}
         >{props.title}
-        </button>
+        </Button>
     );
 };
 
 
-export default Button;
+export default ButtonCount;

@@ -3,8 +3,11 @@ import './App.css';
 import Counter2 from "./counter/Counter2";
 import Counter from "./counter/Counter";
 import {SetterValue} from "./counter/Setter/SetterValue";
-import Input from "./counter/Input";
-import Button from "./counter/Button/Button";
+import Input from "./counter/InputCount";
+import Button from "./counter/Button/ButtonCount";
+import ButtonCount from "./counter/Button/ButtonCount";
+import InputCount from "./counter/InputCount";
+import {Container, Grid, Paper} from "@mui/material";
 
 function App() {
     const [numbers, setNumbers] = useState<number>(1)
@@ -13,6 +16,7 @@ function App() {
     const [downlimit, setDownLimit] = useState<number>(1)
 
     const [message, setMessage] = useState<boolean>(false)
+    const [errorInput, setErrorInput] = useState<boolean>(false)
     const incNumber = () => {
         setNumbers(numbers + 1)
     }
@@ -24,7 +28,7 @@ function App() {
         setNumbers(downlimit)
     }, [downlimit])
     useEffect(() => {
-        let newLowerLocalValue = localStorage.getItem("SetlowerValue")
+        let newLowerLocalValue = localStorage.getItem("SetLowerValue")
         newLowerLocalValue && setNumbers(JSON.parse(newLowerLocalValue))
     }, [])
     useEffect(() => {
@@ -32,7 +36,7 @@ function App() {
         newUpperLocalValue && setUplimit(JSON.parse(newUpperLocalValue))
     }, [])
     useEffect(() => {
-        let newLowerLocalValue = localStorage.getItem("SetlowerValue")
+        let newLowerLocalValue = localStorage.getItem("SetLowerValue")
         newLowerLocalValue && setDownLimit(JSON.parse(newLowerLocalValue))
     }, [])
 
@@ -43,37 +47,62 @@ function App() {
         setMessage(value)
         setNumbers(downlimit)
     }
-    const inputvalue = message ? messageInput : numbers
+    const inputValue = message ? messageInput : numbers
 
+    const errorMessage = (value: boolean) => {
+        setErrorInput(value)
+    }
     return (
-        <div className="App">
-            <div className="box">
-            <SetterValue
-                setNewMessage={setNewMessage}
-                setUplimit={setUplimit}
-                setDownLimit={setDownLimit}
-            />
-            </div>
-            <div className="box">
-                <Input
-                    inputvalue={inputvalue}
-                    inputclassName={(numbersLimitMax) ? "inputIncMax" : "inputInc"}
-                />
-                <div className="twoButtons">
-                    <Button
-                        numbersLimit={numbersLimitMax}
-                        className="incButton"
-                        title={"inc"}
-                        onClickFunc={incNumber}
-                    />
-                    <Button
-                        numbersLimit={numbersLimitMin}
-                        className="resetButton"
-                        title={"reset"}
-                        onClickFunc={resetNumber}
-                    />
-                </div>
-            </div>
+        <div className={"App"}>
+            <Container fixed>
+                <Grid container sx={{p: "50px 20px"}} spacing={6}>
+
+                    <Grid item className={"box"}>
+                        <Paper elevation={8}>
+                            <Grid >
+                                <SetterValue
+                                    errorMessage={errorMessage}
+                                    setNewMessage={setNewMessage}
+                                    setUpLimit={setUplimit}
+                                    setDownLimit={setDownLimit}
+                                />
+                            </Grid>
+
+                        </Paper>
+
+                    </Grid>
+                    <Grid item>
+                        <Paper elevation={8}>
+                            <InputCount
+                                error={errorInput}
+                                inputValue={inputValue}
+                                inputClassName={(numbersLimitMax) ? "inputIncMax" : "inputInc"}
+                            />
+                            <Grid className="twoButtons">
+
+                                <ButtonCount
+                                    numbersLimit={numbersLimitMax}
+                                    className="incButton"
+                                    title="inc"
+                                    onClickFunc={incNumber}
+                                />
+
+
+                                <ButtonCount
+                                    numbersLimit={numbersLimitMin}
+                                    className="resetButton"
+                                    title="reset"
+                                    onClickFunc={resetNumber}
+                                />
+
+                            </Grid>
+                        </Paper>
+
+                    </Grid>
+
+                </Grid>
+
+            </Container>
         </div>
     );
 }

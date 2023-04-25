@@ -1,12 +1,15 @@
-import Input from "../Input";
-import Button from "../Button/Button";
+import Input from "../InputCount";
+import Button from "../Button/ButtonCount";
 import React, {ChangeEvent, useEffect, useState} from "react";
 import InputLimit from "../InputLimits/InputLimit";
+import ButtonCount from "../Button/ButtonCount";
+import {Grid} from "@mui/material";
 
 export type SetterPropsType = {
-    setUplimit: (value: number) => void
+    setUpLimit: (value: number) => void
     setDownLimit: (value: number) => void
     setNewMessage: (value: boolean) => void
+    errorMessage: (value: boolean) => void
 
 }
 
@@ -21,21 +24,21 @@ export const SetterValue = (props: SetterPropsType) => {
         newUpperLocalValue && setUpperInputValue(JSON.parse(newUpperLocalValue))
     }, [])
     useEffect(() => {
-        let newLowerLocalValue = localStorage.getItem("SetlowerValue")
+        let newLowerLocalValue = localStorage.getItem("SetLowerValue")
         newLowerLocalValue && setLowerInputValue(JSON.parse(newLowerLocalValue))
     }, [])
     const setToLocalStorage = () => {
         localStorage.setItem("SetUpperValue", JSON.stringify(upperInputValue))
-        localStorage.setItem("SetlowerValue", JSON.stringify(lowerInputValue))
-        props.setUplimit(upperInputValue)
+        localStorage.setItem("SetLowerValue", JSON.stringify(lowerInputValue))
+        props.setUpLimit(upperInputValue)
         props.setDownLimit(lowerInputValue)
         props.setNewMessage(false)
     }
     const upperLimitChange = (e: ChangeEvent<HTMLInputElement>) => {
-
         setUpperInputValue(JSON.parse(e.currentTarget.value))
         if (JSON.parse(e.currentTarget.value) < 0) {
             setError(true)
+            props.errorMessage(true)
         } else {
             findErrorUpper(JSON.parse(e.currentTarget.value))
         }
@@ -44,6 +47,7 @@ export const SetterValue = (props: SetterPropsType) => {
         setLowerInputValue(JSON.parse(e.currentTarget.value))
         if (JSON.parse(e.currentTarget.value) < 0) {
             setError(true)
+            props.errorMessage(true)
         } else {
             findErrorLower(JSON.parse(e.currentTarget.value))
         }
@@ -51,23 +55,44 @@ export const SetterValue = (props: SetterPropsType) => {
     const findErrorUpper = (value: number) => {
         if (lowerInputValue >= value) {
             setError(true)
+            props.errorMessage(true)
         } else {
             setError(false)
+            props.errorMessage(false)
         }
     }
     const findErrorLower = (value: number) => {
         if (value >= upperInputValue) {
             setError(true)
+            props.errorMessage(true)
         } else setError(false)
+        props.errorMessage(false)
     }
-
     return (
-        <div>
-            <InputLimit InputValue={upperInputValue} limitChange={upperLimitChange} setNewMessage={props.setNewMessage}/>
-            <InputLimit InputValue={lowerInputValue} limitChange={lowerLimitChange} setNewMessage={props.setNewMessage}/>
-            <div>
-                <Button className={"SetButton"} onClickFunc={setToLocalStorage} numbersLimit={error} title={"SET"}/>
-            </div>
-        </div>
+        <Grid  >
+            <Grid>
+                <InputLimit
+                InputValue={upperInputValue}
+                limitChange={upperLimitChange}
+                setNewMessage={props.setNewMessage}
+                error={error}
+            />
+                <InputLimit
+                    InputValue={lowerInputValue}
+                    limitChange={lowerLimitChange}
+                    setNewMessage={props.setNewMessage}
+                    error={error}
+                />
+            </Grid>
+
+            <Grid   >
+                <ButtonCount
+                    className={"SetButton"}
+                    onClickFunc={setToLocalStorage}
+                    numbersLimit={error}
+                    title={"SET"}
+                />
+            </Grid>
+        </Grid>
     )
 }
