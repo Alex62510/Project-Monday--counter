@@ -13,7 +13,8 @@ const ButtonCount = (props: Buttontype) => {
     }
     return (
         <Button
-            size="medium"
+            sx={{m:"10px"}}
+            size="large"
             color="secondary"
             variant="contained"
             className={props.className}

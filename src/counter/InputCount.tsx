@@ -9,10 +9,11 @@ type InputType={
 const InputCount = (props:InputType) => {
     return (
         <TextField
-            size="small"
+            size="medium"
             variant="outlined"
             color="primary"
             focused
+
             error={props.error}
             helperText={props.error && "Incorrect value"}
             sx={{mt: "2px"}}

@@ -13,6 +13,7 @@ const InputLimit = (props: InputLimitsPropsType) => {
         <div>
             <div>
                 <TextField
+
                     error={props.error}
                     helperText={props.error && "Incorrect value"}
                     value={props.InputValue}

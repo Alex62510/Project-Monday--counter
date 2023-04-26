@@ -69,23 +69,34 @@ export const SetterValue = (props: SetterPropsType) => {
         props.errorMessage(false)
     }
     return (
-        <Grid  >
-            <Grid>
-                <InputLimit
-                InputValue={upperInputValue}
-                limitChange={upperLimitChange}
-                setNewMessage={props.setNewMessage}
-                error={error}
-            />
-                <InputLimit
-                    InputValue={lowerInputValue}
-                    limitChange={lowerLimitChange}
-                    setNewMessage={props.setNewMessage}
-                    error={error}
-                />
+        <Grid alignItems={"center"} sx={{p: "30px"}}>
+            <Grid container>
+                <Grid item sx={{p: "15px 20px"}}>
+                    MAX VALUE:
+                </Grid>
+                <Grid item xs={4} sx={{p: "5px"}}>
+                    <InputLimit
+                        InputValue={upperInputValue}
+                        limitChange={upperLimitChange}
+                        setNewMessage={props.setNewMessage}
+                        error={error}
+                    />
+                </Grid>
             </Grid>
-
-            <Grid   >
+            <Grid container>
+                <Grid item sx={{p: "15px 20px"}}>
+                    MIN VALUE:
+                </Grid>
+                <Grid item xs={4} sx={{p: "5px"}}>
+                    <InputLimit
+                        InputValue={lowerInputValue}
+                        limitChange={lowerLimitChange}
+                        setNewMessage={props.setNewMessage}
+                        error={error}
+                    />
+                </Grid>
+            </Grid>
+            <Grid>
                 <ButtonCount
                     className={"SetButton"}
                     onClickFunc={setToLocalStorage}

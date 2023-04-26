@@ -56,10 +56,9 @@ function App() {
         <div className={"App"}>
             <Container fixed>
                 <Grid container sx={{p: "50px 20px"}} spacing={6}>
-
-                    <Grid item className={"box"}>
-                        <Paper elevation={8}>
-                            <Grid >
+                    <Grid item className={"box"} xs={4}>
+                        <Paper elevation={8} sx={{p:"20px"}}  >
+                            <Grid>
                                 <SetterValue
                                     errorMessage={errorMessage}
                                     setNewMessage={setNewMessage}
@@ -67,41 +66,40 @@ function App() {
                                     setDownLimit={setDownLimit}
                                 />
                             </Grid>
-
                         </Paper>
-
                     </Grid>
-                    <Grid item>
-                        <Paper elevation={8}>
-                            <InputCount
-                                error={errorInput}
-                                inputValue={inputValue}
-                                inputClassName={(numbersLimitMax) ? "inputIncMax" : "inputInc"}
-                            />
-                            <Grid className="twoButtons">
-
-                                <ButtonCount
-                                    numbersLimit={numbersLimitMax}
-                                    className="incButton"
-                                    title="inc"
-                                    onClickFunc={incNumber}
+                    <Grid item xs={4}>
+                        <Paper elevation={8} sx={{p:"20px"}}>
+                            <Grid>
+                                <Grid xs={6} sx={{m:"30px"}}>
+                                    <InputCount
+                                    error={errorInput}
+                                    inputValue={inputValue}
+                                    inputClassName={(numbersLimitMax) ? "inputIncMax" : "inputInc"}
                                 />
+                                </Grid>
+                                <Grid className="twoButtons" sx={{ p:"20px"}}>
+
+                                    <ButtonCount
+                                        numbersLimit={numbersLimitMax}
+                                        className="incButton"
+                                        title="inc"
+                                        onClickFunc={incNumber}
+                                    />
 
 
-                                <ButtonCount
-                                    numbersLimit={numbersLimitMin}
-                                    className="resetButton"
-                                    title="reset"
-                                    onClickFunc={resetNumber}
-                                />
+                                    <ButtonCount
+                                        numbersLimit={numbersLimitMin}
+                                        className="resetButton"
+                                        title="reset"
+                                        onClickFunc={resetNumber}
+                                    />
 
+                                </Grid>
                             </Grid>
                         </Paper>
-
                     </Grid>
-
                 </Grid>
-
             </Container>
         </div>
     );
