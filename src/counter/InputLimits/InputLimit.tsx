@@ -1,5 +1,5 @@
 import React, {ChangeEvent} from 'react';
-import {TextField} from "@mui/material";
+
 
 export type InputLimitsPropsType = {
     InputValue: number
@@ -10,26 +10,15 @@ export type InputLimitsPropsType = {
 
 const InputLimit = (props: InputLimitsPropsType) => {
     return (
-        <div>
-            <div>
-                <TextField
-
-                    error={props.error}
-                    helperText={props.error && "Incorrect value"}
-                    value={props.InputValue}
-                    size="small"
-                    variant="outlined"
-                    color="primary"
-                    focused
-                    sx={{mt: "2px"}}
-                    type="number"
-                    maxRows={20}
-                    minRows={-2}
-                    onChange={props.limitChange}
-                    onFocus={() => props.setNewMessage(true)}
-                />
-            </div>
-        </div>
+        <input
+            className="inputLimit"
+            value={props.InputValue}
+            type="number"
+            max={20}
+            min={-2}
+            onChange={props.limitChange}
+            onFocus={() => props.setNewMessage(true)}
+        />
     );
 };
 

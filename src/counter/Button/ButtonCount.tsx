@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-import {Button} from "@mui/material";
 
 type Buttontype = {
     className: string
@@ -8,20 +7,17 @@ type Buttontype = {
     title: string
 }
 const ButtonCount = (props: Buttontype) => {
-    const ClickChinge = () => {
+    const ClickChange = () => {
         props.onClickFunc()
     }
     return (
-        <Button
-            sx={{m:"10px"}}
-            size="large"
-            color="secondary"
-            variant="contained"
+        <button
+
             className={props.className}
-            onClick={ClickChinge}
+            onClick={ClickChange}
             disabled={props.numbersLimit}
         >{props.title}
-        </Button>
+        </button>
     );
 };
 
