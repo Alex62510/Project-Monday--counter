@@ -58,8 +58,8 @@
     border-radius: 5px;
     border: #05e867 solid 2px;
     font-weight: bold;
-    background-color: #04435e;
-    color: #05e867;
+    background-color:  #05e867;
+    color: #04435e;
 }
 
 .setButtonError {
@@ -100,8 +100,8 @@ flex-direction: column;
     border: #05e867 solid 2px;
     border-radius: 7px;
     font-weight: bold;
-    margin-top: 2px;
-    width: 205px;
+    margin: 2px 2px 2px 0;
+    width: 220px;
 }
 .inputInc {
     text-align: center;
@@ -110,9 +110,10 @@ flex-direction: column;
     border-radius: 7px;
     font-weight: bold;
     font-size: larger;
-    width: 90px;
+    width: 100px;
     color: #05e867;
-
+    margin: 22px 10px 22px 10px;
+    padding: 6px;
 }
 .inputIncMax {
     text-align: center;
@@ -123,15 +124,8 @@ flex-direction: column;
     font-size: large;
     width: 100px;
     color: red;
-    margin: 32px 0 31px 0;
-}
-
-.twoButtons {
-    display: flex;
-}
-.inputInc {
-   margin: 22px 10px 22px 10px;
-    padding: 10px;
+    margin: 22px 10px 22px 10px;
+    padding: 6px;
 }
 .twoButtons {
     display: flex;
@@ -141,7 +135,7 @@ flex-direction: column;
     background: #04435e;
     border: #05e867 solid 2px;
     border-radius: 7px;
-    width: 200px;
+    width: 220px;
     height: auto;
 }
 .incButton {
@@ -149,8 +143,8 @@ flex-direction: column;
     border-radius: 5px;
     border: #05e867 solid 2px;
     font-weight: bold;
-    background-color: #04435e;
-    color: #05e867;
+    background-color:  #05e867;
+    color: #04435e;
 }
 .incButtonMax {
     margin: 6px;
@@ -166,8 +160,8 @@ flex-direction: column;
     border-radius: 5px;
     border: #05e867 solid 2px;
     font-weight: bold;
-    background-color: #04435e;
-    color: #05e867;
+    background-color:  #05e867;
+    color: #04435e;
 }
 .resetButtonDisable {
     margin: 6px;
